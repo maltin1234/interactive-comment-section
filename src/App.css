@@ -1,11 +1,11 @@
 * {
-  background-color: hsl(0, 0%, 100%);
   box-sizing: border-box;
 }
 .container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .body {
 }
@@ -15,7 +15,6 @@
 }
 /* Float four columns side by side */
 .column {
-  width: 20%;
   padding: 5px 10px;
 }
 
@@ -32,6 +31,30 @@
   padding: 16px;
   text-align: center;
   background-color: #f1f1f1;
+  height: 150px;
+  width: 500px;
+  margin: 3px;
+  display: flex;
+}
+
+.left-button {
+  flex: 1 1;
+  width: 70px;
+  height: 50px;
+  border: solid blue;
+  align-self: center;
+}
+.profile-pic {
+  flex: 1;
+}
+.author-name {
+  flex: 1;
+}
+.reply {
+  flex: 1;
+}
+.main {
+  flex: 1;
 }
 
 /* Responsive columns - one column layout (vertical) on small screens */
