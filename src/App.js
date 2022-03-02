@@ -1,4 +1,6 @@
 import "./App.css";
+import reply from "./images/icon-reply.svg";
+import avatar from "./images/avatars/image-amyrobson.webp";
 
 function App() {
   return (
@@ -7,10 +9,19 @@ function App() {
         <div className="column">
           <div className="card">
             <div className="left-button">left button</div>
-            <div className="profile-pic">profile</div>
+            <div className="profile-pic">
+              <img alt="" src={avatar} />{" "}
+              <div className="profile">
+                <p>Lorum ipsum dolore. Lorum ip dolor sign seebre</p>
+              </div>
+            </div>
             <div className="author-name">author</div>
-            <div className="reply">reply</div>
-            <div className="main">main-content</div>
+            <div className="date">date</div>
+
+            <div className="reply">
+              {" "}
+              <img alt="" src={reply} />
+            </div>
           </div>
         </div>
 
