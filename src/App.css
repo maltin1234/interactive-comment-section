@@ -17,17 +17,30 @@ body {
   background-color: aquamarine;
   min-width: 500px;
   display: flex;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  border: solid;
+  background-color: aquamarine;
+  min-width: 500px;
+  display: flex;
+  height: 200px;
 }
 /*columns */
 .card__column {
+  text-align: center;
 }
-
 .card__column--first {
+  display: flex;
   border: solid;
+  justify-content: center;
+  align-items: center;
   width: 5rem;
+  flex-direction: column;
 }
 .card__column--second {
   width: 100%;
+  border: solid yellow;
+  display: flex;
+  flex-direction: column;
 }
 /* column--second wrapped rows*/
 .card__row--first {
@@ -37,15 +50,31 @@ body {
   align-items: flex-start; /* vertical position */
 }
 .card__row--second {
+  border: solid;
+  max-width: 600px;
 }
 /* content wrapped in column--first */
 .button__left--icon {
-  align-self: center;
-  align-self: baseline;
-  width: 2rem;
-  height: 5rem;
+  width: 3rem;
+  height: 2rem;
 }
 /* content warpped into row--first*/
-.text {
-  flex: 1;
+.text-username {
+  padding: 0 1rem;
+}
+.text-date {
+}
+.img-avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.img-reply {
+  padding: 10px 5em;
+}
+/* content wrapped into row--second*/
+.main-content {
+  padding: 0 1rem;
+  text-align: initial;
 }
