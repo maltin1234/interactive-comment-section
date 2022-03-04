@@ -1,51 +1,22 @@
-import "./App.css";
-import reply from "./images/icon-reply.svg";
-import avatar from "./images/avatars/image-amyrobson.webp";
+import React from "react";
+import "../src/App.css";
 
 function App() {
   return (
     <div className="container">
-      <div className="row">
-        <div className="column">
-          <div className="card">
-            <div className="left-button">left button</div>
-            <div className="profile-pic">
-              <img alt="" src={avatar} />{" "}
-              <div className="profile">
-                <p>Lorum ipsum dolore. Lorum ip dolor sign seebre</p>
-              </div>
-            </div>
-            <div className="author-name">author</div>
-            <div className="date">date</div>
-
-            <div className="reply">
-              {" "}
-              <img alt="" src={reply} />
-            </div>
-          </div>
+      <div className="card">
+        <div className="card__column card__column--first">
+          <button className="button__left--icon">Btn</button>
         </div>
-
-        <div className="column">
-          <div className="card">
-            <h3>Card 2</h3>
-            <p>Some text</p>
-            <p>Some text</p>
+        <div className="card__column  card__column--second">
+          <div className="card__row card__row--first">
+            <p className="text">Avatar</p>
+            <p className="text">username</p>
+            <p className="text">date</p>
+            <p className="text">re</p>
           </div>
-        </div>
-
-        <div className="column">
-          <div className="card">
-            <h3>Card 3</h3>
-            <p>Some text</p>
-            <p>Some text</p>
-          </div>
-        </div>
-
-        <div className="column">
-          <div className="card">
-            <h3>Card 4</h3>
-            <p>Some text</p>
-            <p>Some text</p>
+          <div className="card__row card__row--second">
+            <p>text goes here</p>
           </div>
         </div>
       </div>
