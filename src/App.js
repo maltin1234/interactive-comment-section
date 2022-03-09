@@ -1,34 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "../src/App.css";
-import avatar from "./images/avatars/image-amyrobson.png";
-import reply from "./images/icon-reply.svg";
+
+import { useEffect } from "react";
+import axios from "axios";
+import CardComponent from "./components/CardComponent";
 
 function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  async function fetchData() {
+    try {
+      const result = await axios.get(`http://localhost:3004/comments`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      console.log(result);
+      setData(result.data);
+
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div className="container">
-      <div className="card">
-        <div className="card__column card__column--first">
-          <button className="button__left--icon">+</button>{" "}
-          <button className="button__left--icon">12</button>
-          <button className="button__left--icon">-</button>
-        </div>
-        <div className="card__column  card__column--second">
-          <div className="card__row card__row--first">
-            <img className="content img-avatar" alt="" src={avatar}></img>
-            <p className="content text-username">Amy Robson</p>
-            <p className="content text-date">1 may 2022</p>
-            <img className="content img-reply" alt="" src={reply}></img>
-          </div>
-
-          <div className="card__row card__row--second">
-            <p className="text main-content">
-              I couldn't agree more with this. Everything moves so fast and it
-              always seems like everyone knows the newest library/framework. But
-              the fundamentals are what stay constant.
-            </p>
-          </div>
-        </div>
-      </div>
+      {data.map((x) => (
+        <CardComponent key={x.id} id={x.id} content={x.content} />
+      ))}
     </div>
   );
 }
